@@ -59,17 +59,16 @@ resource "aws_cloudfront_distribution" "static_content" {
       restriction_type = "none"
     }
   }
-  tags = var.tags
   viewer_certificate {
     cloudfront_default_certificate = true
   }
+  tags = var.tags
   depends_on = [aws_s3_bucket.static]
 }
 
 # Creates policy to allow public access to the S3 bucket
-resource "aws_s3_bucket_policy" "update_website_root_bucket_policy" {
+resource "aws_s3_bucket_policy" "update_static_content_bucket" {
   bucket = aws_s3_bucket.static.id
-
   policy = <<POLICY
 {
   "Version": "2012-10-17",
