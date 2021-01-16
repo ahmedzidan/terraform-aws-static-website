@@ -27,3 +27,15 @@ No requirements.
 | Name | Description |
 |------|-------------|
 | domain | domain name for cloudfront distribution |
+
+## Example
+```
+module "static-website" {
+  source  = "ahmedzidan/static-website/aws"
+  version = "1.0.0"
+  bucket_name = ""
+  folder_path = ""
+  tags = {}
+}
+```
+- You can see full example from [here](https://github.com/ahmedzidan/terraform-aws-static-website/tree/master/example)
