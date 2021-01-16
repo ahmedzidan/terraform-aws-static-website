@@ -3,10 +3,10 @@ variable "bucket_name" {
   type = string
 }
 variable "tags" {
-  description = "tags for the subnet"
+  description = "tags to be added for the resources"
   type = map(any)
 }
 variable "folder_path" {
-  description = "file path to be uploaded"
+  description = "folder path to be uploaded"
   type = string
 }

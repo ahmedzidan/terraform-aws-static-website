@@ -6,6 +6,8 @@
 
 terraform 0.12 and above
 
+No requirements.
+
 ## Providers
 
 | Name | Version |
@@ -17,14 +19,11 @@ terraform 0.12 and above
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | bucket\_name | bucket name | `string` | n/a | yes |
-| folder\_path | file path to be uploaded | `string` | n/a | yes |
-| tags | tags for the subnet | `map(any)` | n/a | yes |
+| folder\_path | folder path to be uploaded | `string` | n/a | yes |
+| tags | tags to be added for the resources | `map(any)` | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| domain | cloudfront distribution domain name |
-
-## Example.
-you can get the full example from example folder
+| domain | domain name for cloudfront distribution |
