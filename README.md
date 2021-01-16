@@ -1,4 +1,5 @@
 ## Resources:
+![structure](https://drive.google.com/uc?id=1CwBPDPtJSPZmevus8QEddky6VIyXFstL)
 - S3 bucket
 - Cloudfront distribution
 - Object uploader
@@ -41,4 +42,4 @@ module "static-website" {
 - You can see full example from [here](https://github.com/ahmedzidan/terraform-aws-static-website/tree/master/example)
 
 ## Mime types
-- we are using the mime type from Internet Assigned Numbers Authority (IANA) official website.
+- we are using the mime type from [Internet Assigned Numbers Authority (IANA) official website](https://www.iana.org/assignments/media-types/media-types.xhtml).
