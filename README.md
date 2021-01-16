@@ -27,13 +27,4 @@ terraform 0.12 and above
 | domain | cloudfront distribution domain name |
 
 ## Example.
-```
-module "static_website" {
-  source = "../"
-  bucket_name = "zidan-static-website"
-  folder_path = "path to the folder to upload all the files inside it"
-  tags = {
-    Name="my-static-website"
-  }
-}
-```
+you can get the full example from example folder
