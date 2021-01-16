@@ -1,20 +1,24 @@
 locals {
   s3_origin_id = "myS3Origin"
 }
+locals {
+  mime_types = jsondecode(file("${path.module}/data/mime.json"))
+}
 # Create s3 bucket
 resource "aws_s3_bucket" "static" {
   bucket = var.bucket_name
   acl    = "private"
-  tags = var.tags
+  tags   = var.tags
 }
 # upload required files
 resource "aws_s3_bucket_object" "static_content" {
-  for_each = fileset(var.folder_path, "*")
-  bucket = aws_s3_bucket.static.id
-  key = each.value
-  source = "${var.folder_path}/${each.value}"
-  etag = filemd5("${var.folder_path}/${each.value}")
-  tags = var.tags
+  for_each     = fileset(var.folder_path, "*")
+  bucket       = aws_s3_bucket.static.id
+  key          = each.value
+  source       = "${var.folder_path}/${each.value}"
+  etag         = filemd5("${var.folder_path}/${each.value}")
+  content_type = lookup(local.mime_types, regex("\\.[^.]+$", each.value), null)
+  tags         = var.tags
 }
 
 resource "aws_cloudfront_origin_access_identity" "origin_access_identity" {
