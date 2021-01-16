@@ -32,7 +32,7 @@ No requirements.
 ```
 module "static-website" {
   source  = "ahmedzidan/static-website/aws"
-  version = "1.0.0"
+  version = "1.0.1"
   bucket_name = ""
   folder_path = ""
   tags = {}
